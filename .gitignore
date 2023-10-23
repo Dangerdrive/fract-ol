@@ -1,0 +1,7 @@
+*.pdf
+a.out
+*.bak
+*/libftTester/
+*.o
+/obj/
+fractol

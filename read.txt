@@ -1,0 +1,125 @@
+//https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension
+
+/*
+
+
+//link with -lmlx -lXext -lX11 -L path/to/libs/
+// gcc myfile.c -o myfile -lm // -lm is for math.h
+// -lmlx -lXext -lX11 -L
+// https://github.com/codam-coding-college/MLX42
+// AMD ROCm (Radeon Open Compute) is an open-source software foundation for GPU computing on Linux.
+//Install it to try running fractol on GPU
+// CUDA is a parallel computing platform and application programming interface model created by Nvidia.
+// OpenCL (Open Computing Language) is a framework for writing programs that execute across heterogeneous platforms consisting of central processing units (CPUs), graphics processing units (GPUs), digital signal processors (DSPs), field-programmable gate arrays (FPGAs) and other processors or hardware accelerators. OpenCL specifies programming languages (based on C99 and C++11) for programming these devices and application programming interfaces (APIs) to control the platform and execute programs on the compute devices. OpenCL provides a standard interface for parallel computing using task- and data-based parallelism.
+// Overall, OpenCL serves as an open and standard framework for parallel computing across different GPU architectures, similar to how CUDA is specific to NVIDIA GPUs.
+// https://github.com/paulo-santana/fractol-gpu
+// https://github.com/librity/ft_fractol
+
+
+
+
+
+//git@github.com:Xyckens/fract-ol.git
+//gcc *.c MLX42/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm
+//valgrind --leak-check=full -s ./a.out mandelbrot
+
+// gcc *.c MLX42/build/libmlx42.a -Iinclude -O3 -ldl -lglfw -pthread -lm && ./a.out julia 0.285 0.01
+// gcc *.c MLX42/build/libmlx42.a -Iinclude -O3 -ldl -lglfw -pthread -lm && ./a.out julia -0.8 0.156
+
+
+October, 2023, cmake version of 42 Sao Paulo could not compile libmlx42.a, so I included a compiled version.
+GLFW is not installed for basecamp/online students from 42 Sao Paulo.
+
+
+diferenças minilibx e MLX codam
+mlx_init -> mlx_init_window
+mlx_init da codam já cria a janela, enquanto a da minilibx não. A da minilibx só cria a conexão.
+então ela recebe parametros para a criação da janela também.
+
+
+CODAM MLX lib has some advantages:
+you dont need to worry about key mapping. It comes mapped.
+You delete your image and mlx_terminate() and you are done freeing*.
+
+*actually CODAM's MLX has a few leaks, including in mlx_init function. 
+They come from GLFW - the frawework they used for Codam's minilibx. https://github.com/glfw/glfw/issues/2269
+to 
+valgrind --leak-check=full --show-leak-kinds=all --suppressions=./MLX42Codam/suppress.sup ./fractol mandelbrot
+You will have way less projects to check. For me it was difficult to find Fract'ols that used Codam's lib and 
+from the ones I found, fewer were in linux. 
+That ones made on Mac I could not run on Ubuntu. So yeah... it is different on Macs.
+
+Norminette will give errors for Codam's MLX.
+
+Performance
+Avoid calling functions on hooks without conditions. 
+as hooks keep listening for inputs, any function called unconditionally on the hook will keep running all the time, wasting precious resource.
+For instance, your rendering functions. After changing a parameter you will have to re-render.
+Avoid having multiple instances of rendering.
+Keep max interations low speacilly to run your tests. Increasing it gives more detail at cost of performance.
+The precision used also makes a lot of difference. A float will be faster than a double or a long double.
+The way you implement color shading also may have a significant impact on performance. As you handle pixels individually, 
+the processing for handle color is multiplied by your screen size.
+
+Treating arguments for julia
+You will need something to take arguments from Julia and accept only valid ones. For example -2.0 and +2.0 for both real and imaginary.
+My atod (alpha to double) limits the numbers, but is failling to filter other characters, such as letters and spaces.
+
+Bonus
+Arrow move
+
+Colors
+Change color or changing color mode.
+
+Zooming at mouse point.
+
+
+Additional fractal
+I recommend search for Mandelbrot and Julia variations. They will have a very simmilar logic so it will be easy to implement.
+Many other fractals have a way different logic as they use recursion.
+In my opinion is not worth the trouble. 
+
+Extra
+If you wanna invest extra time/effort i would recommend trying to make it beautiful/psychodelic.
+By the way, if you dont put pixels inside the set, it will give you a cool glitch when you zoom.
+I dont know if it could be considered wrong, so I would advise doing it only
+Changing Julia constant dinamically. 
+One really cool feature you can implement are hooks to change Julia's constant.
+I made it change the constant according to mouse position. I made it between -1.8 +1.8 for both imaginary and real.
+I also made it change Julia constant increasing or decreasing the constant(both imaginary and real alltogether)
+
+One of the few examples of Fract'ol implementations with Codam minilibx is below.
+Is way way much more than needed, but it has some cool stuff, like transforming colors to hsv
+https://github.com/rvan-mee/Improved_Fractol/tree/master
+Here's the other example I found.
+https://github.com/Bde-meij/fract-ol
+This one below you need to change the LINKERs on the make file. 
+https://github.com/lithiumox-codam/fractol
+replace
+ifeq ($(shell uname -m),arm64)
+LINKERS = -L/opt/homebrew/lib -lglfw -framework IOKit -framework Cocoa
+else ifeq ($(shell uname -m),x86_64)
+LINKERS = -lglfw3 -framework IOKit -framework Cocoa
+endif
+with
+LINKERS = -ldl -lglfw -pthread -lm
+
+
+
+
+Oceano has a great steb-by-step video for it. 
+It uses the old minilibx, but his explanation is great and all theory applies basically the same way.
+https://www.youtube.com/watch?v=ANLW1zYbLcs
+
+if you wanna got deep, there is a full article on plotting algorithms.
+But this was way beyond my poor math skills.
+https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set
+
+
+
+
+https://www.hive.fi/en/article/student-project-fractol/
+
+running fractol on GPU (NVIDIA's CUDA)
+https://github.com/paulo-santana/fractol-gpu
+
