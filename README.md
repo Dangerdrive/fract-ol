@@ -1,4 +1,9 @@
 # Fract'ol README
+<p align="center">
+  <a href="https://github.com/Dangerdrive/fract-ol">
+    <img src="https://raw.githubusercontent.com/Dangerdrive/Dangerdrive/main/images/42projects/fract-olm.png" alt="Fract-ol" title="Fract-ol"/>
+  </a>
+</p>
 
 This project is an implementation of the Fract'ol program using the CODAM MLX library.
 
