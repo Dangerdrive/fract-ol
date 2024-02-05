@@ -8,17 +8,17 @@
 This project is an implementation of the Fract'ol program using the CODAM MLX library.
 
 <video width="560" height="315" controls>
-  <source src="./videos/Screencast from 04-02-2024 23:27:36.webm" type="video/webm">
+  <source src="./Screencast from 04-02-2024 23:27:36.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 <video width="560" height="315" controls>
-  <source src="./videos/Screencast from 04-02-2024 23:40:44.webm" type="video/webm">
+  <source src="./Screencast from 04-02-2024 23:40:44.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-<video width="560" height="315" controls>
-  <source src="./videos/Screencast from 04-02-2024 23:27:36.webm" type="video/webm">
+<!-- <video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:27:36.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 <video width="560" height="315" controls>
@@ -63,6 +63,55 @@ This project is an implementation of the Fract'ol program using the CODAM MLX li
 </video>
 <video width="560" height="315" controls>
   <source src="./videos/Screencast from 05-02-2024 00:14:56.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video> -->
+
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:27:36.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:40:44.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:43:29.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:44:33.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:55:49.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:57:07.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 04-02-2024 23:59:30.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 05-02-2024 00:01:00.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 05-02-2024 00:03:28.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 05-02-2024 00:06:26.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 05-02-2024 00:13:25.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<video width="560" height="315" controls>
+  <source src="./Screencast from 05-02-2024 00:14:56.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
