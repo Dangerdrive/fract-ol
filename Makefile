@@ -50,6 +50,8 @@ valgrind:	all
 all:	prebuild $(NAME)
 
 prebuild:
+	git submodule update --init --recursive
+	sed -i "s/(VERSION 3.18.0)/(VERSION 3.16.0)/" ./MLX42/CMakeLists.txt
 	@echo "Building MLX42..."
 	@cd $(LIBMLX) && cmake -B build && cmake --build build -j4
 
